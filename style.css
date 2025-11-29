@@ -1,192 +1,128 @@
-  @font-face {
-  font-family: 'Roboto Condensed';
-  src: url('TypeLightSans.otf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-  
-  body {
+ @font-face {
+      font-family: 'Roboto Condensed';
+      src: url('TypeLightSans.otf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    body {
       background: #000000;
+      min-height: 100vh;
+      margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
     }
-    .telegram-btn {
-  display: inline-block;
-  background-color: #000000;
-  color: fff;
-  font-family: 'Roboto Condensed', Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 12px 28px;
-  border-radius: 6px;
-  text-decoration: none;
-  transition:0.23s ease;
-  box-shadow: 0 4px 8px rgb(255, 17, 17);
-  letter-spacing: 1px;
-}
-.telegram-btn:hover {
-  background: #000000;
-}
-
-.telegram-btn:active {
-  background: #000000;
-}
-
-.telegram-btn:before {
-  content: ' ';
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 8px;
-  width: 20px;
-  height: 20px;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/8/82/Telegramlogo.svg') no-repeat center/contain;
-}
-
-.telegram-btn2 {
-  display: inline-block;
-  background-color: #000000;
-  color: fff;
-  font-family: 'Roboto Condensed', Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 12px 28px;
-  border-radius: 6px;
-  text-decoration: none;
-  transition:0.23s ease;
-  box-shadow: 0 2px 8px rgba(34, 158, 217, 0.15);
-  letter-spacing: 1px;
-}
-
-.telegram-btn:not(:last-child) {
-  margin-bottom: 20px;
-}
-.telegram-btn2:hover {
-  background: #320000;
-}
-
-.telegram-btn2:active {
-  background: #000000;
-}
-
-.telegram-btn2:before {
-  content: ' ';
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 8px;
-  width: 20px;
-  height: 20px;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/8/82/Telegramlogo.svg') no-repeat center/contain;
-}
     .card {
-      width: 340px;
+      width: 96vw;
+      max-width: 400px;
+      min-width: 270px;
       background: #1d1e1e;
       border-radius: 18px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-      padding: 30px;
+      padding: 9vw 5vw 5vw 5vw;
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
     }
-    .card {
-  
-  position: relative;
-  overflow: hidden;
-}
-
-
-
     .avatar {
-      width: 92px;
-      height: 92px;
+      width: 27vw;
+      max-width: 120px;
+      min-width: 70px;
+      height: 27vw;
+      max-height: 120px;
+      min-height: 70px;
       border-radius: 50%;
       margin-bottom: 18px;
       object-fit: cover;
       border: 3px solid #780909;
+      animation: glow-avatar 3s infinite alternate;
     }
-    .username, .channel {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 18px;
-      margin: 7px 0;
+    .telegram-btn, .telegram-btn2 {
+      display: inline-block;
+      background-color: #000;
+      color: #faa6a6;
+      font-family: 'Roboto Condensed', Arial, sans-serif;
+      font-size: 1.1em;
+      font-weight: 500;
+      padding: 12px 28px;
+      border-radius: 6px;
       text-decoration: none;
+      transition: 0.23s ease;
+      box-shadow: 0 4px 8px rgb(255, 17, 17);
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      animation: glow-btn 6s infinite alternate;
     }
-    .username i, .channel i {
-      color: #00c677;
-      font-style: normal;
-      font-size: 19px;
+    .telegram-btn2 {
+      box-shadow: 0 2px 8px rgba(34, 158, 217, 0.15);
+      margin-bottom: 0;
     }
-    .username {
-      font-weight: 600;
+    .telegram-btn:hover, .telegram-btn2:hover {
+      background: #320000;
     }
-
- .button {
-  padding: 15px 30px;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: box-shadow 0.3s ease;
-}
-.telegram-btn{
-  background-color: #000000;
-  color: #faa6a6;
-  box-shadow: 0 0 10px #ab2424, 0 0 20px #fa2c2c inset;
-}
-.telegram-btn:hover {
-  box-shadow: 0 0 20px #000000, 0 0 40px #ff0101 inset;
-}
-
-
-.telegram-btn2 {
-  background-color: #000000;
-  color: #faa6a6;
-  box-shadow: 0 0 10px #ab2424, 0 0 20px #fa2c2c inset;
-}
-.telegram-btn2:hover {
-  box-shadow: 0 0 20px #000000, 0 0 40px #000000 inset;
-}
-
-
-
-@keyframes glow-btn {
-  0%, 100% {
-    box-shadow: 0 0 22px #fa2c2c, 0 0 20px #fa2c2c inset;
-  }
-  50% {
-    box-shadow: 0 0 22px #ab2424, 0 0 36px #fa2c2c inset;
-  }
-}
-
-.telegram-btn,
-.telegram-btn2 {
-  animation: glow-btn 6s infinite alternate;
-}
-
-.telegram-btn {
-  animation: glow 6s infinite alternate;
-}
-
-@keyframes glow-avatar {
-  0%, 100% {
-    box-shadow: 0 0 16px #fa2c2c, 0 0 36px #fa2c2c inset;
-  }
-  50% {
-    box-shadow: 0 0 32px #ab2424, 0 0 56px #fa2c2c inset;
-  }
-}
-
-.avatar {
-  width: 92px;
-  height: 92px;
-  border-radius: 50%;
-  margin-bottom: 18px;
-  object-fit: cover;
-  border: 3px solid #780909;
-  box-shadow: 0 0 16px #fa2c2c, 0 0 36px #fa2c2c inset;
-  animation: glow-avatar 2.5s infinite alternate;
-}
+    @keyframes glow-btn {
+      0%, 100% {
+        box-shadow: 0 0 22px #fa2c2c, 0 0 20px #fa2c2c inset;
+      }
+      50% {
+        box-shadow: 0 0 22px #ab2424, 0 0 36px #fa2c2c inset;
+      }
+    }
+    @keyframes glow-avatar {
+      0%, 100% {
+        box-shadow: 0 0 16px #fa2c2c, 0 0 36px #fa2c2c inset;
+      }
+      50% {
+        box-shadow: 0 0 32px #ab2424, 0 0 56px #fa2c2c inset;
+      }
+    }
+  
+    @media (max-width: 700px) {
+      .card {
+        width: 99vw;
+        max-width: 99vw;
+        padding: 11vw 4vw 7vw 4vw; 
+      }
+      .avatar {
+        width: 32vw;
+        height: 32vw;
+        max-width: 140px;
+        max-height: 140px;
+        min-width: 70px;
+        min-height: 70px;
+      }
+      .telegram-btn, .telegram-btn2 {
+        font-size: 5.8vw;
+        padding: 5vw 8vw;
+      }
+    }
+  
+    @media (max-width: 400px) {
+      .card {
+        padding: 5vw 4vw 3vw 4vw !important; 
+      }
+    }
+    
+    @media (min-width: 1000px) {
+      .card {
+        max-width: 500px;
+        padding: 60px 34px 34px 34px;
+      }
+      .avatar {
+        max-width: 170px;
+        max-height: 170px;
+        min-width: 95px;
+        min-height: 95px;
+        width: 140px;
+        height: 140px;
+        margin-bottom: 28px;
+      }
+      .telegram-btn, .telegram-btn2 {
+        font-size: 1.6em;
+        padding: 22px 44px;
+        margin-bottom: 22px;
+      }
+    }
